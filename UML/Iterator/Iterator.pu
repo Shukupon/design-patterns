@@ -1,0 +1,39 @@
+@startuml
+
+title Iteartor Pattern
+
+Iterable -- Iterator : create >
+LiquorShelf <--o LiquorShelfIterator
+Liquor <--o LiquorShelf
+
++interface Iterable {
+    + {abstract}iterator
+}
+
++interface Iterator {
+    + {abstract}hasnext()
+    + {abstract}next()
+}
+
++class LiquorShelf implements Iterable {
+    - liquors: Liquor[]
+    - last: int
+    + getLiquorAt(int): Liquor
+    + appendLiquor(Liquor): void
+    + getLength(): int
+    + iterator(): LiquorShelfIterator
+}
+
++class LiquorShelfIterator implements Iterator {
+    - liquorShelf: LiquorShelf
+    - index: int
+    + hasnext(): boolean
+    + next(): Liquor
+}
+
++class Liquor {
+    - name: String
+    + getName(): String
+}
+
+@enduml
