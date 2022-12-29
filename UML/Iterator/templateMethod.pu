@@ -1,0 +1,22 @@
+@startuml
+
++abstract class Drink {
+    + serve(): void
+    + {abstract} prepareGlass(): void
+    + {abstract} make(): void
+    + {abstract} bring(): void
+}
+
++class Sake extends Drink {
+    + prepareGlass(): void
+    + make(): void
+    + bring(): void
+}
+
++class Shochu extends Drink {
+    + prepareGlass(): void
+    + make(): void
+    + bring(): void
+}
+
+@enduml
