@@ -1,0 +1,28 @@
+@startuml
+
+Main -- Stock:> use
+LiquorStock -- LiquorShelf:> has
+
+
++class Main{
+
+}
+
++interface Stock {
+    + showStock(): void
+    + addStock(String item): void
+}
+
++class LiquorStock implements Stock {
+    - liquorShelf: LiquorShelf
+    + showStock(): void
+    + addStock(String item): void
+}
+
++class LiquorShelf {
+    - liquors: list<String>
+    + showList(): void
+    + addList(String liquor): void
+}
+
+@enduml
