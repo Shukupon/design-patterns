@@ -11,7 +11,7 @@ public abstract class Drink {
 	/**
 	 * Template Method.
 	 */
-	public void serve() {
+	public final void serve() {
 
 		prepareGlass();
 		make();
