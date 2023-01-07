@@ -1,4 +1,5 @@
 @startuml
+title TemplateMethod Pattern
 
 +abstract class Drink {
     + serve(): void

@@ -1,0 +1,23 @@
+@startuml
+title FactoryMethod Pattern
+
+LogFactory -- Log :> create
+LogFactoryImpl -- LogImpl :> create
+
++interface LogFactory {
+    +getLog(): Log
+}
+
++interface Log {
+    +info(): void
+}
+
++class LogFactoryImpl implements LogFactory {
+    +getLog(): Log
+}
+
++class LogImpl implements Log {
+    +info(): void
+}
+
+@enduml

@@ -1,4 +1,5 @@
 @startuml
+title Adapter Pattern
 
 Main -- Stock:> use
 LiquorStock -- LiquorShelf:> has
