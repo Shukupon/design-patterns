@@ -1,4 +1,9 @@
 package shukupon.designpatterns.factoryMethod;
+
+import shukupon.designpatterns.factoryMethod.framework.Log;
+import shukupon.designpatterns.factoryMethod.framework.LogFactory;
+import shukupon.designpatterns.factoryMethod.impl.LogFactoryImpl;
+
 /**
  * 実行クラス.
  * @author Shukupon

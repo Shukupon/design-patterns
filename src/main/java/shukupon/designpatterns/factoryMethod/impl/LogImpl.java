@@ -1,4 +1,6 @@
-package shukupon.designpatterns.factoryMethod;
+package shukupon.designpatterns.factoryMethod.impl;
+
+import shukupon.designpatterns.factoryMethod.framework.Log;
 
 /**
  * Logを実装するクラス.

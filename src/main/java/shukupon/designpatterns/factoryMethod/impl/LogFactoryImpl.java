@@ -1,4 +1,7 @@
-package shukupon.designpatterns.factoryMethod;
+package shukupon.designpatterns.factoryMethod.impl;
+
+import shukupon.designpatterns.factoryMethod.framework.Log;
+import shukupon.designpatterns.factoryMethod.framework.LogFactory;
 
 /**
  * LogFactoryを実装し、Log型のインスタンスを返却するクラス.

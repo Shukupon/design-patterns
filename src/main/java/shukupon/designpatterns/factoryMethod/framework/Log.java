@@ -1,4 +1,4 @@
-package shukupon.designpatterns.factoryMethod;
+package shukupon.designpatterns.factoryMethod.framework;
 
 /**
  * Product役のインターフェース.
