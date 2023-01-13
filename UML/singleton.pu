@@ -1,0 +1,12 @@
+@startuml
+
+title Singleton Pattern
+
++class LiquorShelf {
+ - liquorShelf: LiquorShelf
+ - liquors: Liquors[]
+ + getInstance(): LiquorShelf
+ + getLiquors(): Liquors[]
+}
+
+@enduml
