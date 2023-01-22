@@ -1,0 +1,39 @@
+@startuml
+
+title Prototype Pattern
+
+Manager --* Bottle:> has
+
++class Manager{
+    -bottles: List<Bottle>
+    +order(Bottle bottle): void
+    +register(Bottle Bottle): void
+    +showList(): void
+
+}
+
++interface Bottle extends Cloneable{
+    +{abstract}getName(): String
+    +{abstract}getAmount(): int
+    +{abstract}create(): Bottle
+}
+
++class Sake implements Bottle{
+    -name: String
+    -amount: int
+
+    +Sake(String name, int amount)
+    +getName(): String
+    +getAmount(): int
+}
+
++class Shochu implements Bottle{
+    -name: String
+    -amount: int
+
+    +Shochu(String name, int amount)
+    +getName(): String
+    +getAmount(): int
+}
+
+@enduml
