@@ -20,11 +20,13 @@ public class Shochu implements Bottle {
 	
 	public Bottle create() {
 		Bottle b = null;
-		try {
-			b = (Bottle) clone();
-		}catch(CloneNotSupportedException e) {
-			e.printStackTrace();
-		}
+		b = (Bottle) clone();
 		return b;
+	}
+	
+	@Override
+	public Bottle clone() {
+		Bottle clone = new Shochu(name, amount);
+		return clone;
 	}
 }

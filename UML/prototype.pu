@@ -6,8 +6,7 @@ Manager --* Bottle:> has
 
 +class Manager{
     -bottles: List<Bottle>
-    +order(Bottle bottle): void
-    +register(Bottle Bottle): void
+    +order(Bottle bottle, int num): void
     +showList(): void
 
 }
