@@ -1,0 +1,35 @@
+@startuml
+title Builder Pattern
+
+Brewer -- SakeBuilder :> use
+
++class Brewer{
+    - sakeBuilder: SakeBuilder
+    + Brewer(SakeBuilder sakeBuilder)
+    + brew(): void
+}
+
++interface SakeBuilder{
+    +{abstract}processingRawMaterial(): void
+    +{abstract}makingKoji(): void
+    +{abstract}makingYeast(): void
+    +{abstract}makingFermentationMash(): void
+    +{abstract}packing(): void
+}
+
++class YamahaimotoBuilder implements SakeBuilder{
+    +processingRawMaterial(): void
+    +makingKoji(): void
+    +makingYeast(): void
+    +makingFermentationMash(): void
+    +packing(): void
+}
+
++class MurokaNamaGenshuBuilder implements SakeBuilder{
+    +processingRawMaterial(): void
+    +makingKoji(): void
+    +makingYeast(): void
+    +makingFermentationMash(): void
+    +packing(): void
+}
+@enduml
