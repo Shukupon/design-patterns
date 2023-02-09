@@ -1,0 +1,43 @@
+@startuml
+title Bridge Pattern
+
+Waiter -- Drink:> use
+
++class Waiter{
+    - drink: Drink
+    + Waiter(Drink drink)
+    + prepareGlass(): void
+    + make(): void
+    + bring(): void
+    + serve(): void
+}
+
++class SeniorWaiter extends Waiter{
+    - drink: Drink
+    + Waiter(Drink drink)
+    + prepareGlass(): void
+    + make(): void
+    + bring(): void
+    + serve(): void
+    + multiServe(): void
+}
+
++interface Drink {
+    + {abstract} rawPrepareGlass(): void
+    + {abstract} rawMake(): void
+    + {abstract} rawBring(): void
+}
+
++class Sake implements Drink {
+    + rawPrepareGlass(): void
+    + rawMake(): void
+    + rawBring(): void
+}
+
++class Shochu implements Drink {
+    + rawPrepareGlass(): void
+    + rawMake(): void
+    + rawBring(): void
+}
+
+@enduml

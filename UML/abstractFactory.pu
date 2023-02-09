@@ -1,0 +1,44 @@
+@startuml
+title Abstract Factory Pattern
+
+BoxFactory -- HorizontalLine:> create
+BoxFactory -- VerticalLine:> create
+PlusBoxFactory -- ConcreteHorizontalLine:> create
+PlusBoxFactory -- ConcreteVerticalLine:> create
+
++interface BoxFactory{
+    +{abstract}createBox(): List<List<String>>
+    +{abstract}createHorizontalLine(): Line
+    +{abstract}createVerticalLine(): Line
+}
+
++interface Line{
+    +{abstract}addLine(List<List<String>> box): void
+}
+
++interface HorizontalLine implements Line{
+    +{abstract}addLine(List<List<String>> box): void
+}
+
+
++interface VerticalLine implements Line{
+    +{abstract}addLine(List<List<String>> box): void
+}
+
++class PlusBoxFactory implements BoxFactory{
+    +createBox(): List<List<String>>
+}
+
++class ConcreteHorizontalLine implements HorizontalLine{
+    -char: String
+    +ConcreteHorizontalLine(String char)
+    +addLine(List<List<String>> box): void
+}
+
++class ConcreteVerticalLine implements VerticalLine{
+    -char: String
+    +ConcreteVerticalLine(String char)
+    +addLine(List<List<String>> box): void
+}
+
+@enduml
