@@ -1,0 +1,38 @@
+@startuml
+title Strategy Pattern
+
+context -- Waiter:> use
+Waiter -- ServeDrinkMethod:> have
+
+class context{
+
+}
+
++class Waiter{
+    - serveDrinkMethod: ServeDrinkMethod
+    + Waiter(ServeDrinkMethod serveDrinkMethod)
+    + serveDrink(): void
+}
+
++interface ServeDrinkMethod{
+    + serve(): void
+    + prepareGlass(): void
+    + make(): void
+    + bring(): void
+}
+
++class ServeSake implements ServeDrinkMethod {
+    + serve(): void
+    + prepareGlass(): void
+    + make(): void
+    + bring(): void
+}
+
++class ServeShochu implements ServeDrinkMethod {
+    + serve(): void
+    + prepareGlass(): void
+    + make(): void
+    + bring(): void
+}
+
+@enduml
