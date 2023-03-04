@@ -1,0 +1,27 @@
+@startuml
+title Decorator Pattern
+
++abstract class Rice{
+    + getRow(): int
+    + getColomn(): int
+    + getText(): String
+    + show(): void
+}
+
++class Endosperm extends Rice{
+    - name: String
+    + getRow(): int
+    + getColomn(): int
+    + getText(): String
+    + show(): void
+}
+
++class Outside extends Rice{
+    - name: String
+    - rice: Rice
+    + getRow(): int
+    + getColomn(): int
+    + getText(): String
+    + show(): void
+}
+@enduml
