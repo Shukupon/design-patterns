@@ -1,0 +1,23 @@
+@startuml
+title Composite Pattern
+
+Package -- Drink:> has
+
++interface Drink {
+    +{abstract}getAmount(): int
+}
+
++class Bottle implements Drink {
+    - name: String
+    - amount: int
+    
+    +getAmount(): int
+}
+
++class Package implements Drink {
+    - name: String
+    - drinks: List<Drink>
+    +getAmount(): int
+}
+
+@enduml
