@@ -1,0 +1,38 @@
+@startuml
+title Visitor Pattern
+
+Package -- Drink:> has
+
++interface Drink {
+    + {abstract}getName(): String
+    + {abstract}getAmount(): int
+}
+
++class Bottle implements Drink {
+    - name: String
+    - amount: int
+    + getName(): String
+    + getAmount(): int
+    + accept(Visitor Visitor): void
+}
+
++class Package implements Drink {
+    - name: String
+    - drinks: List<Drink>
+    + getName(): String
+    + getAmount(): int
+    + accept(Visitor visitor): void
+}
+
++interface Visitor {
+    + {abstract}visit(Bottle Bottle): void
+    + {abstract}visit(Package package): void
+}
+
++class SakeVisitor implements Visitor {
+    + visit(Bottle Bottle): void
+    + visit(Package package): void
+}
+
+
+@enduml
