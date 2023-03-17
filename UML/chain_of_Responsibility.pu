@@ -1,0 +1,38 @@
+@startuml
+title Chain of Responsibility Pattern
+
+Main --> Drink: request
+Drink <--o Drink
+
++class Main {
+
+}
+
++class Alcohol {
+    - name: String
+    - kind: Kind
+    + Alcohol(String name, Kind kind)
+}
+
++abstract class Drink {
+    - name: String
+    - next: Drink
+    + Drink(String name)
+    + setNext(Drink drink): Drink
+    + drink(Alcohol alcohol): void
+    # resolve(Alcohol alcohol): boolean
+}
+
++class DrinkSake extends Drink {
+    # resolve(Alcohol alcohol): boolean
+}
+
++class DrinkShochu extends Drink {
+    # resolve(Alcohol alcohol): boolean
+}
+
++class DrinkWhiskey extends Drink {
+    # resolve(Alcohol alcohol): boolean
+}
+
+@enduml
