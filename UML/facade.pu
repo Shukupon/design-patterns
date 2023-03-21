@@ -1,0 +1,33 @@
+@startuml
+title Facade Pattern
+
++class Brewer {
+    - ProcessingRawMaterial processingRawMaterial
+    - MakingKoji makingKoji
+    - MakingYeast makingYeast
+    - MakingFermentationMash makingFermentationMash
+    - Packing packing
+    + brew(String rice)
+}
+
++class ProcessingRawMaterial {
+    + String processing(String rice)
+}
+
++class MakingKoji {
+    + String makingKoji(String steamedRice)
+}
+
++class MakingYeast {
+    + String makingYeast(List<String> ingredient)
+}
+
++class MakingFermentationMash {
+    + String makingFermentationMash(List<String> ingredient)
+}
+
++class Packing {
+    + String packing(String mash)
+}
+
+@enduml
