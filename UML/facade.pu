@@ -1,6 +1,12 @@
 @startuml
 title Facade Pattern
 
+Brewer -- ProcessingRawMaterial
+Brewer -- MakingKoji
+Brewer -- MakingYeast
+Brewer -- MakingFermentationMash
+Brewer -- Packing
+
 +class Brewer {
     - ProcessingRawMaterial processingRawMaterial
     - MakingKoji makingKoji
