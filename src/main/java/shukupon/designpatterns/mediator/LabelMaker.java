@@ -62,9 +62,9 @@ public class LabelMaker implements Mediator {
         } else if (honjyozou.isEnabled()) {
             temp += "本醸造";
         }
-        if (ginjyo.isEnabled() && !honjyozou.isEnabled()) {
+        if (ginjyo.isEnabled()) {
             temp += "吟醸";
-        } else if (daiGinjyo.isEnabled() && !honjyozou.isEnabled()) {
+        } else if (daiGinjyo.isEnabled()) {
             temp += "大吟醸";
         }
         temp += "酒";
