@@ -1,0 +1,65 @@
+@startuml
+title Mediator Pattern
+
+LabelMaker --> Colleague: has
+LabelMaker --> Sake: has
+
++interface Mediator {
+    + {abstract} void createColleagues()
+    + {abstract} void colleagueChanged()
+}
+
++class LabelMaker implements Mediator {
+    - Sake sake
+    - Junmai junmai
+    - Honjyozou honjyozou
+    - Ginjyo ginjyo
+    - DaiGinjyo daiGinjyo
+    - Tokubetsu tokubetsu
+    + void createColleagues()
+    + void colleagueChanged()
+}
+
++class Sake {
+    - int polishingRatio
+    - int kojiRatio
+    - boolean isContainIngredientExceptRice
+}
+
++interface Colleague {
+    + {abstract} void setMediator(Mediator mediator)
+    + {abstract} void setColleagueEnabled(boolean enabled)
+    + {abstract} boolean isEnabled()
+}
+
++class Junmai implements Colleague {
+    + void setMediator(Mediator mediator)
+    + void setColleagueEnabled(boolean enabled)
+    + boolean isEnabled()
+}
+
++class Honjyozou implements Colleague {
+    + void setMediator(Mediator mediator)
+    + void setColleagueEnabled(boolean enabled)
+    + boolean isEnabled()
+}
+
++class Ginjyo implements Colleague {
+    + void setMediator(Mediator mediator)
+    + void setColleagueEnabled(boolean enabled)
+    + boolean isEnabled()
+}
+
++class DaiGinjyo implements Colleague {
+    + void setMediator(Mediator mediator)
+    + void setColleagueEnabled(boolean enabled)
+    + boolean isEnabled()
+}
+
++class Tokubetsu implements Colleague {
+    + void setMediator(Mediator mediator)
+    + void setColleagueEnabled(boolean enabled)
+    + boolean isEnabled()
+}
+
+@enduml
