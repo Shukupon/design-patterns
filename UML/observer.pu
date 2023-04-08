@@ -1,0 +1,37 @@
+@startuml
+title Observer Pattern
+
+Ball o--> Observer: notifies
+
++interface Observer{
+    + {abstract} void update()
+}
+
++class BackPlayer implements Observer{
+    + void update()
+}
+
++class FrontPlayer implements Observer{
+    + void update()
+}
+
++abstract class Ball{
+    - List<Observer> observers
+    + void addObserver(Observer observer)
+    + void deleteObserver(Observer observer)
+    + void notifyObservers()
+}
+
++class TennisBall extends Ball{
+    - String state
+    + void setState(String state)
+    + String getState()
+}
+
++class Shuttle extends Ball{
+    - String state
+    + void setState(String state)
+    + String getState()
+}
+
+@enduml
