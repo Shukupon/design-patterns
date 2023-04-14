@@ -1,0 +1,21 @@
+@startuml
+title Memento Pattern
+
++class Game {
+    - int myScore
+    - int opponentScore
+    + void addMyScore()
+    + void addOpponentScore()
+    + Memento createMemento()
+    + void restoreMemento(Memento memento)
+}
+
++class Memento {
+    - int myScore
+    - int opponentScore
+    ~ Memento(int myScore, int opponentScore)
+    + int getMyScore()
+    + int getOpponentScore()
+}
+
+@enduml
