@@ -49,8 +49,12 @@ public class Coordinater {
     }
 
     public void changePosition() {
-        player1 = BackPlayer.getInstance();
-        player2 = FrontPlayer.getInstance();
+        if(player1 == FrontPlayer.getInstance() && player2 == BackPlayer.getInstance()) {
+            player1 = BackPlayer.getInstance();
+            player2 = FrontPlayer.getInstance();
+        }else {
+            
+        }
         System.out.println("前衛と後衛を入れ替わります。");
     }
 
