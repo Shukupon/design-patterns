@@ -53,7 +53,8 @@ public class Coordinater {
             player1 = BackPlayer.getInstance();
             player2 = FrontPlayer.getInstance();
         }else {
-            
+            player1 = FrontPlayer.getInstance();
+            player2 = BackPlayer.getInstance();
         }
         System.out.println("前衛と後衛を入れ替わります。");
     }
