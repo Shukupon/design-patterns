@@ -1,0 +1,32 @@
+@startuml
+title State Pattern
+
++class Coordinater {
+    - Player player1
+    - Player player2
+    + void respondBall(String ball)
+}
+
++interface Player {
+ + {abstract} void respondFrontOwnSide()
+ + {abstract} void respondFrontOppositeSide()
+ + {abstract} void respondBackOwnSide()
+ + {abstract} void respondBackOppositeSide()
+
+}
+
++class FrontPlayer implements Player {
+ + void respondFrontOwnSide()
+ + void respondFrontOppositeSide()
+ + void respondBackOwnSide()
+ + void respondBackOppositeSide()
+}
+
++class BackPlayer implements Player {
+ + void respondFrontOwnSide()
+ + void respondFrontOppositeSide()
+ + void respondBackOwnSide()
+ + void respondBackOppositeSide()
+}
+
+@enduml
