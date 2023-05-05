@@ -1,0 +1,27 @@
+@startuml
+title FlyWeight Pattern
+
+LiquorFactory --> Liquor: create
+LiquorShelf --> LiquorFactory: use
+
++class LiquorFactory {
+    - Map<String, Liquor> pool
+    - {static} LiquorFactory singleton
+    + {static} LiquorFactory getInstance()
+    + synchronized Liquor getLiqour(String string)
+}
+
++class Liquor {
+    - String name
+    - String view
+    + Liquor(String name)
+    + void print()
+}
+
++class LiquorShelf {
+    - List<String> liquors
+    + void addLiquor(String name)
+    + void print()
+}
+
+@enduml
