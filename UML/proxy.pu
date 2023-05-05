@@ -1,0 +1,33 @@
+@startuml
+title Proxy Pattern
+
+Main --> LiquorProxy: use
+LiquorProxy --> Liquor: use
+
++interface Drink {
+    + {abstract} String getName()
+    + {abstract} void setName()
+    + {abstract} void print()
+}
+
++class LiquorProxy implements Drink{
+    - String name
+    - String view
+    + Liquor(String name)
+    + String getName()
+    + void setName()
+    + void print()
+}
+
++class Liquor implements Drink{
+    - String name
+    - String view
+    + Liquor(String name)
+    + String getName()
+    + void setName()
+    + void print()
+}
+
+
+
+@enduml
