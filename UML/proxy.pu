@@ -12,8 +12,7 @@ LiquorProxy --> Liquor: use
 
 +class LiquorProxy implements Drink{
     - String name
-    - String view
-    + Liquor(String name)
+    + LiquorProxy(String name)
     + String getName()
     + void setName()
     + void print()
