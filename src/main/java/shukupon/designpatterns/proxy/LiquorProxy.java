@@ -26,14 +26,14 @@ public class LiquorProxy implements Drink {
     }
 
     @Override
-    public void setName(String name) {
+    public synchronized void setName(String name) {
         if(real != null) {
             real.setName(name);
         }
         this.name = name;
     }
     
-    private void realize() {
+    private synchronized void realize() {
         real = new Liquor(name);
     }
 
