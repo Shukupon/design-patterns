@@ -1,0 +1,20 @@
+@startuml
+title Command Pattern
+
++interface Command {
+    + void execute()
+ }
+
++class Commands implements Command {
+    - Queue<Command> commands
+    + void execute()
+}
+
++class MoveCommand implements Command {
+    - int x
+    - int y
+    + void execute()
+    + MoveCommand(int x, int y)
+}
+
+@enduml
