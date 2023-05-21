@@ -1,20 +1,31 @@
 @startuml
 title Command Pattern
 
+MoveCommand --> Character: has
+Commands o--> Command
+
 +interface Command {
     + void execute()
  }
 
 +class Commands implements Command {
-    - Queue<Command> commands
+    - Deque<Command> commands
+    + void addQueue(Command Command)
     + void execute()
 }
 
 +class MoveCommand implements Command {
     - int x
     - int y
+    - Character target
     + void execute()
-    + MoveCommand(int x, int y)
+    + MoveCommand(int x, int y, target)
+}
+
++class Character {
+    - int x
+    - int y
+    + void move(int x, int y)
 }
 
 @enduml

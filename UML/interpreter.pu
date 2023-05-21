@@ -1,0 +1,45 @@
+@startuml
+title  Interpreter Pattern
+
++interface Node {
+    + {abstract} void parse(Context context) throws ParseException;
+}
+
++class ProgramNode implements Node {
+    - CommandListNode commandListNode
+    + void parse(Context context)
+}
+
++class CommandListNode implements Node {
+    - List<Node> list
+    + void parse(Context context)
+}
+
++class CommandNode implements Node {
+    - Node node
+    + void parse(Context context)
+}
+
++class RepeatCommandNode implements Node {
+    - int number
+    - Node commandListNode
+    + void parse(Context context)
+}
+
++class PrimitiveCommandNode implements Node {
+    - String name
+    + void parse(Context context)
+}
+
++class Context {
+    - String[] tokens
+    - String lastToken
+    - int index
+    + String nextToken()
+    + String currentToken()
+    + void skipToken(String token) throws ParseException
+    + int currentNumber() throws ParseException
+}
+
+
+@enduml
