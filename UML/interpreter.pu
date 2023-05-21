@@ -3,32 +3,38 @@ title  Interpreter Pattern
 
 +interface Node {
     + {abstract} void parse(Context context) throws ParseException;
+    + {abstract} void execute(Character target)
 }
 
 +class ProgramNode implements Node {
     - CommandListNode commandListNode
     + void parse(Context context)
+    + void execute(Character target)
 }
 
 +class CommandListNode implements Node {
     - List<Node> list
     + void parse(Context context)
+    + void execute(Character target)
 }
 
 +class CommandNode implements Node {
     - Node node
     + void parse(Context context)
+    + void execute(Character target)
 }
 
 +class RepeatCommandNode implements Node {
     - int number
     - Node commandListNode
     + void parse(Context context)
+    + void execute(Character target)
 }
 
 +class PrimitiveCommandNode implements Node {
     - String name
     + void parse(Context context)
+    + void execute(Character target)
 }
 
 +class Context {
